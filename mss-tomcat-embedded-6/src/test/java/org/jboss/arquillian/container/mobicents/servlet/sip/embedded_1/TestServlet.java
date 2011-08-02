@@ -63,7 +63,7 @@ public class TestServlet extends HttpServlet
 		  sipFactory.createRequest(applicationSession, "INVITE", "sip:jean.deruelle@127.0.0.1:5061", "sip:arquillian@127.0.0.1:5062");
 	  sipServletRequest.getSession().setHandler(TestSipServlet.class.getSimpleName());
 
-	  sipServletRequest.send();
+//	  sipServletRequest.send();
 	  
       response.getWriter().append(MESSAGE + applicationSession.getApplicationName());
    }
