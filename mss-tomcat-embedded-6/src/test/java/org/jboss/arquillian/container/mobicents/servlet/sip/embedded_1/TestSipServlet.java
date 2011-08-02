@@ -19,13 +19,10 @@ package org.jboss.arquillian.container.mobicents.servlet.sip.embedded_1;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import javax.annotation.Resource;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.sip.SipFactory;
-import javax.servlet.sip.SipServlet;
 import javax.servlet.sip.SipServletRequest;
 
 import org.mobicents.servlet.sip.weld.extension.event.request.Invite;
