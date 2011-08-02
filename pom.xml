@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Parent -->
+	<parent>
+		<groupId>org.jboss</groupId>
+		<artifactId>jboss-parent</artifactId>
+		<version>6-beta-2</version>
+		<relativePath />
+	</parent>
+
+	<!-- Model Version -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Artifact Configuration -->
+	<groupId>org.jboss.arquillian.container</groupId>
+	<artifactId>arquillian-parent-mss-tomcat</artifactId>
+	<version>1.0.0.Final-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Arquillian Mobicents Container Parent Tomcat</name>
+	<description>Mobicents Tomcat Container integrations for the Arquillian Project</description>
+
+	<!-- <scm> <connection>scm:git:git://git@github.com:arquillian/arquillian-container-tomcat.git</connection> 
+		<developerConnection>scm:git:ssh://github.com/arquillian/arquillian-container-tomcat.git</developerConnection> 
+		<url>git://github.com/arquillian/arquillian-container-tomcat.git</url> </scm> -->
+	<!-- Properties -->
+	<properties>
+
+		<!-- Versioning -->
+		<version.arquillian_core>1.0.0.CR1</version.arquillian_core>
+		<version.shrinkwrap_tomcat>1.0.0-beta-1</version.shrinkwrap_tomcat>
+
+		<version.jboss_spec>1.0.0.Final</version.jboss_spec>
+		<version.weld_servlet>1.1.0.Final</version.weld_servlet>
+
+		<!-- override from parent -->
+		<version.release.plugin>2.1</version.release.plugin>
+		<maven.compiler.target>1.5</maven.compiler.target>
+		<maven.compiler.source>1.5</maven.compiler.source>
+
+		<!-- Mobicents -->
+		<version.org.mobicents.servlet.sip>1.6.0-SNAPSHOT</version.org.mobicents.servlet.sip>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${version.arquillian_core}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-build</artifactId>
+				<version>${version.arquillian_core}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.shrinkwrap.container</groupId>
+				<artifactId>shrinkwrap-container-tomcat-60</artifactId>
+				<version>${version.shrinkwrap_tomcat}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.weld.servlet</groupId>
+				<artifactId>weld-servlet</artifactId>
+				<version>${version.weld_servlet}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.spec.javax.servlet</groupId>
+				<artifactId>jboss-servlet-api_3.0_spec</artifactId>
+				<version>${version.jboss_spec}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Mobicents -->
+			<dependency>
+				<groupId>org.mobicents.servlet.sip</groupId>
+				<artifactId>sip-servlets-impl</artifactId>
+				<version>${version.org.mobicents.servlet.sip}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mobicents.servlet.sip</groupId>
+				<artifactId>sip-servlets-client</artifactId>
+				<version>${version.org.mobicents.servlet.sip}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mobicents.servlet.sip</groupId>
+				<artifactId>sip-servlets-application-router</artifactId>
+				<version>${version.org.mobicents.servlet.sip}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mobicents.servlet.sip</groupId>
+				<artifactId>sip-servlets-tomcat-jboss4</artifactId>
+				<version>${version.org.mobicents.servlet.sip}</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<pushChanges>false</pushChanges>
+					<localCheckout>true</localCheckout>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<systemProperties>
+						<org.apache.maven.global-settings>${settings}</org.apache.maven.global-settings>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>mss-tomcat-embedded-6</module>
+		<module>mss-tomcat-embedded-7</module>
+	</modules>
+</project>
+

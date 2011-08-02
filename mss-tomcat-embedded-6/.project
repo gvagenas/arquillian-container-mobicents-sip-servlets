@@ -1,0 +1,17 @@
+<projectDescription>
+  <name>mss-tomcat-embedded-6</name>
+  <comment>Mobicents Tomcat 6.x Embedded container integration for the Arquillian Project. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects>
+    <project>shrinkwrap-container-mobicents-13</project>
+    <project>shrinkwrap-extension-sip-api</project>
+    <project>shrinkwrap-extension-sip-impl</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
