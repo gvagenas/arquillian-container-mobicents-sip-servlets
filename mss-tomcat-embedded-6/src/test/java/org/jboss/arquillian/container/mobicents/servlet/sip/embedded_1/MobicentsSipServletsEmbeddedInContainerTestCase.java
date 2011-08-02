@@ -18,10 +18,13 @@ package org.jboss.arquillian.container.mobicents.servlet.sip.embedded_1;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.TooManyListenersException;
 import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.sip.SipProvider;
+import javax.sip.address.SipURI;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -32,8 +35,10 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.DependencyResolvers;
 import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mobicents.servlet.sip.startup.SipContext;
 
 /**
  * Tests that SIP Servlets deployments into the  Mobicents Sip Servlets server work through the
@@ -63,7 +68,7 @@ public class MobicentsSipServletsEmbeddedInContainerTestCase
 	// -------------------------------------------------------------------------------------||
 	// Instance Members
 	// -------------------------------------------------------------------||
-	// -------------------------------------------------------------------------------------||
+	// -------------------------------------------------------------------------------------||	
 
 	/**
 	 * Define the deployment
@@ -83,7 +88,7 @@ public class MobicentsSipServletsEmbeddedInContainerTestCase
 		
 		return webArchive;
 	}
-
+	
 	// -------------------------------------------------------------------------------------||
 	// Tests
 	// ------------------------------------------------------------------------------||
@@ -93,6 +98,7 @@ public class MobicentsSipServletsEmbeddedInContainerTestCase
 
 	@Inject TestBean testBean;
 
+	
 	/**
 	 * Ensures the {@link HelloWorldServlet} returns the expected response
 	 */
@@ -126,4 +132,5 @@ public class MobicentsSipServletsEmbeddedInContainerTestCase
 		Assert.assertEquals("Expected output was not equal by value", expected, httpResponse);
 		log.info("Got expected result from Http Servlet: " + httpResponse);
 	}
+	
 }

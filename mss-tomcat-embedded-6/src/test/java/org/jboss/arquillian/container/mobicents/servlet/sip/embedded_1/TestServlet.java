@@ -61,7 +61,7 @@ public class TestServlet extends HttpServlet
 	  SipApplicationSession applicationSession = convergedHttpSession.getApplicationSession();
 	  SipServletRequest sipServletRequest = 
 		  sipFactory.createRequest(applicationSession, "INVITE", "sip:jean.deruelle@127.0.0.1:5061", "sip:arquillian@127.0.0.1:5062");
-//	  sipServletRequest.getSession().setHandler(TestSipServlet.class.getSimpleName());
+	  sipServletRequest.getSession().setHandler(TestSipServlet.class.getSimpleName());
 
 	  sipServletRequest.send();
 	  

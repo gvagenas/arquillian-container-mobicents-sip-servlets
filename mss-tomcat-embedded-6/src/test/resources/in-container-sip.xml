@@ -13,7 +13,7 @@
 		<javaee:param-value>halo</javaee:param-value>
 	</context-param>
 
-<!--
+
 	<servlet>
 		<javaee:servlet-name>TestSipServlet</javaee:servlet-name>
 		<javaee:servlet-class>org.jboss.arquillian.container.mobicents.servlet.sip.embedded_1.TestSipServlet</javaee:servlet-class>
@@ -28,6 +28,6 @@
 		</javaee:init-param>
 
 	</servlet>
--->
+
 	
 </sip-app>
