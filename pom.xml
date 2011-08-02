@@ -131,7 +131,7 @@
 
 	<modules>
 		<module>mss-tomcat-embedded-6</module>
-		<module>mss-tomcat-embedded-7</module>
+	<!--	<module>mss-tomcat-embedded-7</module> -->
 	</modules>
 </project>
 
