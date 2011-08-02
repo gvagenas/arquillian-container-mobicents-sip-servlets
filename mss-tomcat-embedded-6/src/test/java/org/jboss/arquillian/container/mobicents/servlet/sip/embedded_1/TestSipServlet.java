@@ -29,8 +29,6 @@ import org.mobicents.servlet.sip.weld.extension.event.request.Invite;
 
 /**
  * TestSipServlet
- * 
- * No need to extend SipServlet. Make use of CTF @Observes mechanism to get notified for various SIP MESSAGES
  *
  * @author gvagenas gvagenas@gmail.com / devrealm.org
  * @author Jean Deruelle
