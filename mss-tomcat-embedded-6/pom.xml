@@ -134,14 +134,23 @@
 			<artifactId>weld-servlet</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
+		<!-- <dependency> <groupId>org.mobicents.servlet.sip.weld</groupId> <artifactId>sip-servlets-weld</artifactId> 
+			<version>1.0.0.ALPHA1</version> <scope>test</scope> </dependency> -->
+
 		<dependency>
-			<groupId>org.mobicents.servlet.sip.weld</groupId>
-			<artifactId>sip-servlets-weld</artifactId>
-			<version>1.0.0.ALPHA1</version>
+			<groupId>org.mobicents.servlet.sip.ctf.core</groupId>
+			<artifactId>ctf-core</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-
+<!--
+		<dependency>
+			<groupId>org.mobicents.servlet.sip.ctf.core</groupId>
+			<artifactId>ctf-core-extension</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+-->
 		<!-- Mobicents Sip Servlets libs required for testing -->
 
 		<dependency>
@@ -206,6 +215,19 @@
 			<version>2.0.6</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<useProjectReferences>false</useProjectReferences>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>

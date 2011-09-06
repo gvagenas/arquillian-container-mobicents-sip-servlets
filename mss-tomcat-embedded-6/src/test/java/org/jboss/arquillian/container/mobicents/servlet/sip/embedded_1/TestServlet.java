@@ -33,7 +33,6 @@ import javax.servlet.sip.SipFactory;
 import javax.servlet.sip.SipServlet;
 import javax.servlet.sip.SipServletRequest;
 
-import org.mobicents.servlet.sip.weld.extension.event.request.Invite;
 
 /**
  * TestServlet
@@ -52,6 +51,9 @@ public class TestServlet extends HttpServlet
    private static final Logger log = Logger.getLogger(TestServlet.class.getName());
    
    @Inject
+   TestBean testBean;
+   
+   @Resource
    SipFactory sipFactory;
 
    @Override

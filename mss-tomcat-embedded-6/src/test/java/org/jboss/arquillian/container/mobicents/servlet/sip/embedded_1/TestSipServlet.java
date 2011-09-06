@@ -25,7 +25,8 @@ import javax.servlet.ServletException;
 import javax.servlet.sip.SipFactory;
 import javax.servlet.sip.SipServletRequest;
 
-import org.mobicents.servlet.sip.weld.extension.event.request.Invite;
+import org.mobicents.servlet.sip.ctf.core.extension.event.request.Invite;
+
 
 /**
  * TestSipServlet

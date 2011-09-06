@@ -1,6 +1,6 @@
 <projectDescription>
-  <name>mss-tomcat-embedded-6</name>
-  <comment>Mobicents Tomcat 6.x Embedded container integration for the Arquillian Project. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <name>mss-tomcat7-embedded</name>
+  <comment>Mobicents Tomcat Container integrations for the Arquillian Project. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
   <projects/>
   <buildSpec>
     <buildCommand>

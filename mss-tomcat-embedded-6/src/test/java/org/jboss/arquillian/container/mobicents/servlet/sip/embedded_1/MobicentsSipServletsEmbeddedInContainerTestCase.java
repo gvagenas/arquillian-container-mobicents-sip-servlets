@@ -80,7 +80,8 @@ public class MobicentsSipServletsEmbeddedInContainerTestCase
 		WebArchive webArchive = ShrinkWrap.create(WebArchive.class, "test2.war");
 		webArchive.addClasses(TestServlet.class, TestBean.class, TestSipServlet.class);
 		webArchive.addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class)
-						.artifact("org.mobicents.servlet.sip.weld:sip-servlets-weld:1.0.0.ALPHA1").resolveAs(GenericArchive.class));
+//						.artifact("org.mobicents.servlet.sip.weld:sip-servlets-weld:1.0.0.ALPHA1").resolveAs(GenericArchive.class));
+				.artifact("org.mobicents.servlet.sip.ctf.core:ctf-core:1.0.0-SNAPSHOT").resolveAs(GenericArchive.class));
 		webArchive.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 		webArchive.addAsManifestResource("in-container-context.xml", "context.xml");
 		webArchive.addAsWebInfResource("in-container-web.xml", "web.xml");
